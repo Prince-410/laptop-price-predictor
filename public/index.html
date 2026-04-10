@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor | AI Valuation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💻 Laptop Price Predictor</h1>
+            <p>Advanced AI-powered Valuation Model for Modern Hardware</p>
+        </header>
+
+        <form id="predictionForm">
+            <div class="grid">
+                <!-- Brand & Processor -->
+                <div class="input-group">
+                    <label>Brand</label>
+                    <select id="brand">
+                        <option value="ASUS">ASUS</option>
+                        <option value="Lenovo">Lenovo</option>
+                        <option value="HP">HP</option>
+                        <option value="DELL">DELL</option>
+                        <option value="APPLE">APPLE</option>
+                        <option value="acer">Acer</option>
+                        <option value="MSI">MSI</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Processor</label>
+                    <select id="processor">
+                        <option value="Core i5">Core i5</option>
+                        <option value="Core i3">Core i3</option>
+                        <option value="Core i7">Core i7</option>
+                        <option value="Core i9">Core i9</option>
+                        <option value="Ryzen 5">Ryzen 5</option>
+                        <option value="Ryzen 7">Ryzen 7</option>
+                        <option value="M1">M1</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>RAM (GB)</label>
+                    <select id="ram">
+                        <option value="4">4 GB</option>
+                        <option value="8" selected>8 GB</option>
+                        <option value="16">16 GB</option>
+                        <option value="32">32 GB</option>
+                        <option value="64">64 GB</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>SSD (GB)</label>
+                    <select id="ssd">
+                        <option value="0">None</option>
+                        <option value="128">128 GB</option>
+                        <option value="256">256 GB</option>
+                        <option value="512" selected>512 GB</option>
+                        <option value="1024">1 TB</option>
+                        <option value="2048">2 TB</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>GPU VRAM (GB)</label>
+                    <select id="gpu">
+                        <option value="0">Integrated</option>
+                        <option value="2">2 GB</option>
+                        <option value="4">4 GB</option>
+                        <option value="6">6 GB</option>
+                        <option value="8">8 GB</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Operating System</label>
+                    <select id="os">
+                        <option value="Windows">Windows</option>
+                        <option value="Mac">Mac OS</option>
+                        <option value="DOS">DOS / Linux</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-predict">
+                <span class="btn-text">Predict Market Price</span>
+                <div class="loading-spinner"></div>
+            </button>
+        </form>
+
+        <div id="resultCard" class="result-card">
+            <p style="color: var(--text-muted); font-weight: 600; margin-bottom: 0.5rem;">Estimated Market Value</p>
+            <div id="priceOutput" class="result-price">₹0.00</div>
+            <p style="color: #4ade80; font-size: 0.9rem; margin-top: 1rem;">Based on current market trends & hardware specifications</p>
+        </div>
+
+        <div class="info-banner">
+            Our AI model analyzes 14 hardware features using Gradient Boosting to estimate a fair market price within a 95% confidence interval.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

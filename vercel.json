@@ -1,14 +1,8 @@
 {
-  "builds": [
-    {
-      "src": "index.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "index.py"
-    }
+  "version": 2,
+  "cleanUrls": true,
+  "public": true,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/public/$1" }
   ]
 }
