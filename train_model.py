@@ -8,11 +8,9 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.compose import TransformedTargetRegressor
 import pickle
 
-# Load dataset
 print("Loading dataset...")
 df = pd.read_csv('laptop_data.csv')
 
-# ADVANCED CLEANING
 print("Cleaning data...")
 df['ram_gb'] = df['ram_gb'].str.extract('(\d+)').astype(int)
 df['ssd'] = df['ssd'].str.extract('(\d+)').astype(int)
@@ -21,11 +19,9 @@ df['hdd'] = (df['hdd'] / 1024).astype(int)
 df['graphic_card_gb'] = df['graphic_card_gb'].str.extract('(\d+)').astype(int)
 df['warranty'] = df['warranty'].str.replace(' year', '').str.replace('s', '').replace('No warranty', '0').astype(int)
 
-# Clean processor_gnrtn: map to integers
 map_gnrtn = {'10th': 10, '11th': 11, '12th': 12, '7th': 7, '8th': 8, '9th': 9, '4th': 4, 'Not Available': 0}
 df['processor_gnrtn'] = df['processor_gnrtn'].map(map_gnrtn)
 
-# Features
 features = ['brand', 'processor_brand', 'processor_name', 'processor_gnrtn', 'ram_gb', 
             'ram_type', 'ssd', 'hdd', 'os', 'graphic_card_gb', 
             'weight', 'warranty', 'Touchscreen', 'msoffice']
@@ -44,7 +40,6 @@ preprocessor = ColumnTransformer([
     ('cat', OneHotEncoder(drop='first', sparse_output=False, handle_unknown='ignore'), categorical_features)
 ])
 
-# Gradient Boosting often performs better on this scale of data
 regressor = GradientBoostingRegressor(
     n_estimators=300,
     learning_rate=0.1,
