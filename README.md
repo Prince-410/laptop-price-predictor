@@ -1,4 +1,16 @@
+---
+title: Laptop Price Predictor
+emoji: 💻
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+sdk_version: 4.0.0
+app_file: app.py
+pinned: false
+---
+
 # 💻 Laptop Price Predictor 🚀
+
 
 A high-performance machine learning application designed to predict the price of laptops based on their hardware specifications. This tool provides instant estimations in Indian Rupees (₹), helping users understand the market value of various laptop configurations.
 
