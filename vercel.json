@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "public": true,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/public/$1" }
+  "name": "laptop-price-predictor",
+  "builds": [
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
   ]
 }

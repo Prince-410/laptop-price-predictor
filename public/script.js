@@ -13,36 +13,45 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
     btnText.style.display = 'none';
     spinner.style.display = 'block';
     
-    // Collect Data
+    // Collect Data from all fields
     const data = {
         brand: document.getElementById('brand').value,
-        processor_brand: "Intel", // Default or extract from another field
-        processor_name: document.getElementById('processor').value,
-        processor_gnrtn: "11th",
-        ram_gb: parseInt(document.getElementById('ram').value),
-        ram_type: "DDR4",
+        processor_brand: document.getElementById('processor_brand').value,
+        processor_name: document.getElementById('processor_name').value,
+        processor_gnrtn: document.getElementById('processor_gnrtn').value,
+        ram_gb: parseInt(document.getElementById('ram_gb').value),
+        ram_type: document.getElementById('ram_type').value,
         ssd: parseInt(document.getElementById('ssd').value),
-        hdd: 0,
+        hdd: parseInt(document.getElementById('hdd').value),
         os: document.getElementById('os').value,
-        graphic_card_gb: parseInt(document.getElementById('gpu').value),
-        weight: "Casual",
-        warranty: 1,
-        touchscreen: "No",
-        msoffice: "No"
+        graphic_card_gb: parseInt(document.getElementById('graphic_card_gb').value),
+        weight: document.getElementById('weight').value,
+        warranty: parseInt(document.getElementById('warranty').value),
+        touchscreen: document.querySelector('input[name="touchscreen"]:checked').value,
+        msoffice: document.querySelector('input[name="msoffice"]:checked').value
     };
 
+    console.log("Input data:", data);
+
     try {
-        // Change this URL to your Backend API (Render/HuggingFace)
-        // For demonstration, we'll simulate a response if the URL is not set
-        const API_URL = '/api/predict'; 
+        // Change this URL to your Backend API (Render/HuggingFace) once deployed
+        const API_URL = 'https://YOUR_BACKEND_URL/predict'; 
         
         // This is where you connect to your Gradio/FastAPI backend
-        // Since we are deploying a static site, we'd normally call the external host
+        /*
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        const formattedPrice = result.formatted_price;
+        */
         
-        // Simulation for visual testing
+        // Simulation for visual testing until backend is connected
         await new Promise(resolve => setTimeout(resolve, 1500));
         
-        const mockPrice = Math.floor(Math.random() * (120000 - 35000) + 35000);
+        const mockPrice = Math.floor(Math.random() * (150000 - 30000) + 30000);
         const formattedPrice = new Intl.NumberFormat('en-IN', {
             style: 'currency',
             currency: 'INR',

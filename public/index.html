@@ -15,8 +15,9 @@
         </header>
 
         <form id="predictionForm">
+            <!-- Section: Brand & Processor -->
+            <h2 class="section-title">🏷️ Brand & Processor</h2>
             <div class="grid">
-                <!-- Brand & Processor -->
                 <div class="input-group">
                     <label>Brand</label>
                     <select id="brand">
@@ -24,31 +25,69 @@
                         <option value="Lenovo">Lenovo</option>
                         <option value="HP">HP</option>
                         <option value="DELL">DELL</option>
-                        <option value="APPLE">APPLE</option>
-                        <option value="acer">Acer</option>
+                        <option value="acer">acer</option>
                         <option value="MSI">MSI</option>
+                        <option value="Avita">Avita</option>
+                        <option value="APPLE">APPLE</option>
                     </select>
                 </div>
                 <div class="input-group">
-                    <label>Processor</label>
-                    <select id="processor">
+                    <label>Processor Brand</label>
+                    <select id="processor_brand">
+                        <option value="Intel">Intel</option>
+                        <option value="AMD">AMD</option>
+                        <option value="M1">M1</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Processor Name</label>
+                    <select id="processor_name">
                         <option value="Core i5">Core i5</option>
                         <option value="Core i3">Core i3</option>
                         <option value="Core i7">Core i7</option>
                         <option value="Core i9">Core i9</option>
                         <option value="Ryzen 5">Ryzen 5</option>
                         <option value="Ryzen 7">Ryzen 7</option>
+                        <option value="Ryzen 3">Ryzen 3</option>
                         <option value="M1">M1</option>
                     </select>
                 </div>
                 <div class="input-group">
+                    <label>Generation</label>
+                    <select id="processor_gnrtn">
+                        <option value="10th">10th Gen</option>
+                        <option value="11th" selected>11th Gen</option>
+                        <option value="12th">12th Gen</option>
+                        <option value="7th">7th Gen</option>
+                        <option value="8th">8th Gen</option>
+                        <option value="9th">9th Gen</option>
+                        <option value="4th">4th Gen</option>
+                        <option value="Not Available">N/A</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Section: Memory & Storage -->
+            <h2 class="section-title">🧠 Memory & Storage</h2>
+            <div class="grid">
+                <div class="input-group">
                     <label>RAM (GB)</label>
-                    <select id="ram">
+                    <select id="ram_gb">
                         <option value="4">4 GB</option>
                         <option value="8" selected>8 GB</option>
                         <option value="16">16 GB</option>
                         <option value="32">32 GB</option>
                         <option value="64">64 GB</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>RAM Type</label>
+                    <select id="ram_type">
+                        <option value="DDR4">DDR4</option>
+                        <option value="DDR5">DDR5</option>
+                        <option value="LPDDR3">LPDDR3</option>
+                        <option value="LPDDR4">LPDDR4</option>
+                        <option value="LPDDR4X">LPDDR4X</option>
                     </select>
                 </div>
                 <div class="input-group">
@@ -63,8 +102,29 @@
                     </select>
                 </div>
                 <div class="input-group">
+                    <label>HDD (TB)</label>
+                    <select id="hdd">
+                        <option value="0" selected>None</option>
+                        <option value="1">1 TB</option>
+                        <option value="2">2 TB</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Section: Build & Extras -->
+            <h2 class="section-title">⚙️ Build & Extras</h2>
+            <div class="grid">
+                <div class="input-group">
+                    <label>Operating System</label>
+                    <select id="os">
+                        <option value="Windows">Windows</option>
+                        <option value="Mac">Mac</option>
+                        <option value="DOS">DOS / Linux</option>
+                    </select>
+                </div>
+                <div class="input-group">
                     <label>GPU VRAM (GB)</label>
-                    <select id="gpu">
+                    <select id="graphic_card_gb">
                         <option value="0">Integrated</option>
                         <option value="2">2 GB</option>
                         <option value="4">4 GB</option>
@@ -73,12 +133,38 @@
                     </select>
                 </div>
                 <div class="input-group">
-                    <label>Operating System</label>
-                    <select id="os">
-                        <option value="Windows">Windows</option>
-                        <option value="Mac">Mac OS</option>
-                        <option value="DOS">DOS / Linux</option>
+                    <label>Weight Category</label>
+                    <select id="weight">
+                        <option value="Casual">Casual</option>
+                        <option value="ThinNlight">Thin & Light</option>
+                        <option value="Gaming">Gaming</option>
                     </select>
+                </div>
+                <div class="input-group">
+                    <label>Warranty (Years)</label>
+                    <select id="warranty">
+                        <option value="0">No Warranty</option>
+                        <option value="1" selected>1 Year</option>
+                        <option value="2">2 Years</option>
+                        <option value="3">3 Years</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
+                <div class="input-group">
+                    <label>Touchscreen</label>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="touchscreen" value="No" checked> No</label>
+                        <label class="radio-label"><input type="radio" name="touchscreen" value="Yes"> Yes</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>MS Office Included</label>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="msoffice" value="No" checked> No</label>
+                        <label class="radio-label"><input type="radio" name="msoffice" value="Yes"> Yes</label>
+                    </div>
                 </div>
             </div>
 
