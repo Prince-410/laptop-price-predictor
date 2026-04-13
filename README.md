@@ -14,6 +14,9 @@ pinned: false
 
 A high-performance machine learning application designed to predict the price of laptops based on their hardware specifications. This tool provides instant estimations in Indian Rupees (₹), helping users understand the market value of various laptop configurations.
 
+## 🔗 Live Demo
+Experience the predictor live: **[laptoppriceprediction.xyz](https://laptoppriceprediction.xyz)**
+
 ## 🌟 Key Features
 - **Accurate Predictions**: Powered by a Random Forest Regressor optimized for price estimation.
 - **Comprehensive Specs**: Considers Brand, Processor, RAM, SSD/HDD, OS, Graphics Card, Warranty, and more.
